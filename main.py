@@ -16,7 +16,8 @@ cp_speed_monitor = CPSpeedMonitor(velocity)
 x = np.linspace(0, 10, 100)
 y = 2 * np.sin(x)
 new_trajectory = np.array(list(zip(x, y)))
-stage_controller = StageController(new_trajectory, 2, velocity)
+lag = 2
+stage_controller = StageController(new_trajectory, lag, velocity, cp_speed_monitor)
 
 cp_speed_monitor.start()
 stage_controller.start()

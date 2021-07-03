@@ -11,6 +11,7 @@ class TrajectoryCalculator:
     def __init__(self, trajectory, lag):
         self.trajectory = trajectory
         self.path = self.path_trajectory(lag)
+        self.kappa = self.curvature()
         self.path_x = self.path[:, 0]
         self.path_y = self.path[:, 1]
 
@@ -55,6 +56,7 @@ class TrajectoryCalculator:
         plt.plot(self.path_x, self.path_y)
         plt.plot(self.trajectory[:, 0], self.trajectory[:, 1])
         plt.show()
+
 
 def main():
     x = np.linspace(0, 10, 100)
