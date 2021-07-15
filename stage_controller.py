@@ -51,6 +51,7 @@ class StageController(threading.Thread):
         serial_port = serial.Serial('COM18', baudrate=9600, timeout=0.1)
         serial_port.read()
         receiver = '^'
+        # TODO: last path point
         for i in range(len(self.path) - 1):
             while '^' not in str(receiver):
                 receiver = serial_port.read()

@@ -10,4 +10,9 @@ def main():
 
 
 if __name__ == '__main__':
-    pass
+    vs = [(1, 2), (2, 3), (3, 4)]
+    hs = [(1, 2), (3, 4), (4, 6)]
+    cmds = ['sdfad', 'dsafasdf', 'ewrwer']
+    with open('test.txt', 'w') as f:
+        for i in range(len(vs)):
+            f.write(str(vs[i]) + '\t' + str(hs[i]) + '\t' + cmds[i] + '\r\n')

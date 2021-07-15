@@ -83,6 +83,7 @@ class CPSpeedMonitor(threading.Thread):
             ret, frame_h = capture_h.read()
             _, max_bias_v = detect(frame_v)
             _, max_bias_h = detect(frame_h)
+            # TODO: time
             self.v.update(math.sqrt((max_bias_h - last_h) ** 2 + (max_bias_v - last_v) ** 2))
             last_h = max_bias_h
             last_v = max_bias_v
