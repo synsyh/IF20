@@ -58,7 +58,6 @@ def read_video_y():
     size = (int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)), int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
     # out = cv2.VideoWriter('positioning.mp4', fourcc, 10.0, size)
     while capture.isOpened():
-        capture.read()
         ret, frame = capture.read()
         if ret:
             grey_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
